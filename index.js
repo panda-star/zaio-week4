@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use("/property-api", require('./routes/property-api')); 
 
 // error handling middleware
+// sends back error message
 app.use(function(err,req,res,next){
     res.status(422).send({error: err.message});
 })
