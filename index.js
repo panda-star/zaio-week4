@@ -18,6 +18,9 @@ app.use(bodyParser.json());
 // initialize property routes
 app.use("/property-api", require('./routes/property-api')); 
 
+// initialize user routes
+app.use("/user-api", require('./routes/user-api')); 
+
 // basic error handling middleware
 // sends back error message
 app.use(function(err,req,res,next){
