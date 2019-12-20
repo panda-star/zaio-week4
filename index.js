@@ -15,10 +15,10 @@ app.use(express.static("public"));
 
 app.use(bodyParser.json());
 
-// initialize routes
+// initialize property routes
 app.use("/property-api", require('./routes/property-api')); 
 
-// error handling middleware
+// basic error handling middleware
 // sends back error message
 app.use(function(err,req,res,next){
     res.status(422).send({error: err.message});
