@@ -20,8 +20,8 @@ router.get("/properties/:id", function(req, res, next){
 
 // add property to db
 router.post("/properties", function(req,res, next){
-    Property.create(req.body).then(function(ninja){
-        res.send(ninja);
+    Property.create(req.body).then(function(property){
+        res.send(property);
     }).catch(next);     
 });
   

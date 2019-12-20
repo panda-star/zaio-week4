@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const PropertySchema = new Schema({
    title: {
        type: String,
-       required: [true, "name is required"]
+       required: [true, "title is required"]
    },
 
 //    image: {
