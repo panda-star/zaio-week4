@@ -9,7 +9,7 @@ const PropertySchema = new Schema({
    },
 
 //    image: {
-//        type: String
+//        type: Media
 //    },
 
     // estate agent who handles any queries for the house
@@ -39,7 +39,7 @@ const PropertySchema = new Schema({
         required: [true, "price is required"]
     },  
 
-    // is the house for sale or not
+    // is the house still for sale or not
     avaliable: {
        type: Boolean,
        default: true
