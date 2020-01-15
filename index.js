@@ -8,7 +8,10 @@ const app = express();
 
 // connect to mongoDB
 // mongoose.connect("mongodb://localhost/properties");
-mongoose.connect('mongodb://localhost/properties', { useUnifiedTopology: true, useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/properties', { useUnifiedTopology: true, useNewUrlParser: true });
+
+// connection string for mongodb Atlas cluster
+mongoose.connect('mongodb+srv://dbUser:test@cluster0-xb1k6.mongodb.net/test?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true });
 
 // serves static files
 app.use(express.static("public"));
