@@ -10,8 +10,22 @@ const app = express();
 // mongoose.connect("mongodb://localhost/properties");
 // mongoose.connect('mongodb://localhost/properties', { useUnifiedTopology: true, useNewUrlParser: true });
 
+// promise error handling
+const slowAndSteady = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        console.log('Slow and steady wins the race.');
+        resolve();
+    }, 5000);
+});
+
+process.on('unhandledRejection', function(err) {
+    console.log(err);
+    // sendInTheCalvary(err);
+});
+
 // connection string for mongodb Atlas cluster
-mongoose.connect('mongodb+srv://dbUser:test@cluster0-xb1k6.mongodb.net/test?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect('mongodb+srv://dbUser:test@cluster0-xb1k6.mongodb.net/test?retryWrites=true&w=majority', 
+{ useUnifiedTopology: true, useNewUrlParser: true });
 
 // serves static files
 app.use(express.static("public"));
