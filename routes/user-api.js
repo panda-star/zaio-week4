@@ -12,7 +12,7 @@ router.get("/users", function(req, res, next){
     });
 });
 
-// get a single user
+// get a single user from database
 router.get("/users/:id", function(req, res, next){
     User.findOne({_id: req.params.id}).then(function(user){
         res.send(user);
